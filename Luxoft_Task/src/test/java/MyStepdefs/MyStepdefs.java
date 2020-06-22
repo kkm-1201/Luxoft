@@ -25,7 +25,7 @@ public class MyStepdefs {
 
     @Given("I have open main page")
     public void iHaveOpenMainPage() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\48508\\Desktop\\Repos\\Luxoft_Task\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://www.ubs.com/global/en.html");
         driver.manage().window().maximize();
