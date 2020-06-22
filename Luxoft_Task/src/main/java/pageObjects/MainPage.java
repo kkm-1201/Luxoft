@@ -73,16 +73,11 @@ public class MainPage {
         iconSearch.click();
     }
 
-    public void selectDomicile() throws InterruptedException {
-        sleep(1000);
+    public void selectDomicile() {
         btnDomicile.click();
-        sleep(1000);
         selDomicileRegion.click();
-        sleep(1000);
         getEurope.click();
-        sleep(1000);
         selDomicileCountry.click();
-        sleep(1000);
         getGermany.click();
     }
 

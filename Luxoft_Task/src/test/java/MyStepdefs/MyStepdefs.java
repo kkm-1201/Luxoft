@@ -16,6 +16,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.MainPage;
 
 
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -27,6 +29,7 @@ public class MyStepdefs {
     public void iHaveOpenMainPage() {
         System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.ubs.com/global/en.html");
         driver.manage().window().maximize();
 
@@ -57,8 +60,6 @@ public class MyStepdefs {
     @Then("Language has been changed")
     public void languageHasBeenChanged() {
         MainPage page = new MainPage(driver);
-        wait = new WebDriverWait(driver,10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='menulabel-6001']")));
         WebElement h1Title = driver.findElement(By.className("header__hlTitle"));
         assertEquals("Globale Themen", h1Title.getText());
     }
